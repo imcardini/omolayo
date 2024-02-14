@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heartContainer">
+        <div class="heart">
+          <!-- <img src="./img/elf.jpg" style="width: 300px;" alt=""> -->
+          <video autoplay muted loop id="bgVideo">
+            <source src="./img/1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <span
+        style="
+          font-size: 3rem;
+          text-transform: uppercase;
+          color: #d70808;
+          position: absolute;
+          top: 20%;
+          left: 0%;
+          text-align: center;
+        "
+        >is my love the cutest ?
+      </span>
+      <button id="heartButton">click here to find out</button>
+      <button
+        id="secondButton"
+        style="
+          display: none;
+          z-index: 1000;
+          position: absolute;
+          bottom: 10%;
+          font-size: 1rem;
+        "
+      >
+        <a
+          href="./index/indexx.html"
+          style="color: white; text-decoration: none"
+          >there is more 🤭😊 click me </a
+        >
+      </button>
+    </div>
+    <script>
+      document
+        .getElementById("heartButton")
+        .addEventListener("click", function () {
+          const heart = document.querySelector(".heart");
+          heart.classList.add("pop");
+          setTimeout(() => {
+            heart.classList.remove("pop");
+            document.getElementById("secondButton").style.display = "block"; // Show the second button
+          }, 4000); // Adjust the duration of the "pop" effect (in milliseconds)
+        });
+    </script>
+  </body>
+</html>
